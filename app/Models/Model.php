@@ -84,9 +84,56 @@ abstract class Model implements ModelInterface
     function delete(){
         
         $sql = "DELETE FROM ".self::$table."WHERE id = :id";
-        
+
         return $this->db->execSql($sql,['id' => $this->id]);
         
+    }
+    public function create()
+    {
+        $properties = get_object_vars($this);
+        // Exclude 'id', it is auto-incremented
+        unset($properties['id']);
+        unset($properties['db']);
+        unset($properties['table']);
+ 
+        $columns = implode(', ', array_keys($properties));
+ 
+        $placeholders = [];
+        foreach (array_keys($properties) as $key) {
+            $placeholders[] = ":$key";
+        }
+        $placeholders = implode(', ', $placeholders);
+ 
+        $sql = "INSERT INTO `" . static::$table . "` ($columns) VALUES ($placeholders)";
+ 
+        return $this->db->execSql($sql, $properties);
+    }
+ 
+    public function update()
+    {
+        $properties = get_object_vars($this);
+        unset($properties['db']);
+        unset($properties['table']);
+        $id = $properties['id'] ?? null;
+ 
+        if (!$id) {
+            $_SESSION['error_message'] = "Egyedi azonosító nincs megadva!";
+            return false;
+        }
+ 
+        unset($properties['id']); // Exclude 'id' for the update values
+ 
+        $setClauseParts = [];
+        foreach (array_keys($properties) as $key) {
+            $setClauseParts[] = "$key = :$key";
+        }
+        $setClause = implode(', ', $setClauseParts);
+ 
+        $sql = "UPDATE `" . static::$table . "` SET $setClause WHERE id = :id";
+        // Add 'id' back for the WHERE clause
+        $properties['id'] = $id;
+ 
+        return $this->db->execSql($sql, $properties);
     }
 }
 ?>
