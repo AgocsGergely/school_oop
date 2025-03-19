@@ -2,7 +2,7 @@
 
 namespace App\Interfaces;
 
-interface ModellInterface
+interface ModelInterface
 {
     function find(int $id): ?static;
     function all($orderBy = []): array;
