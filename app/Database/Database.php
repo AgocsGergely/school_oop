@@ -7,7 +7,7 @@ class Database{
     protected const DEFAULT_CONFIG = [
         'host' => 'localhost',
         'user' => 'root',
-        'password' => null,
+        'password' => '',
         'database' => 'schoolbook'
     ];
     protected static ?Database $instance = null;
@@ -26,6 +26,7 @@ class Database{
                 PDO::ATTR_EMULATE_PREPARES => false // Use real prepared
             ]);
         } catch (PDOException $e){
+            die("Database connection error: " . $e->getMessage());
             error_log($e->getMessage());
             throw new \RuntimeException("Database connection error.");
         }

@@ -14,14 +14,14 @@ abstract class Controller implements ControllerInterface
         $this ->model = $model;
     }
     abstract function index();
-    abstract function show();
+    abstract function show(int $id);
     abstract function create();
     abstract function save(array $data);
     abstract function edit(int $id);
     abstract function update(int $id, array $data);
     abstract function delete(int $id);
 
-    /*
+    
     protected function render(string $view, array $data = []): void
     {
         View::render($view,$data);
@@ -31,6 +31,6 @@ abstract class Controller implements ControllerInterface
     {
         header("Location: ");
     }
-        */
+        
 }
 ?>
