@@ -29,7 +29,8 @@ abstract class Controller implements ControllerInterface
 
     protected function redirect(string $url): void
     {
-        header("Location: ");
+        header("Location: $url");
+        exit;
     }
         
 }

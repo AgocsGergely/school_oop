@@ -18,75 +18,67 @@ class ClassController extends Controller{
     }
 
     public function create(): void
-    {/*
+    {
         $this->render('classes/create');
-        */
     }
     public function edit(int $id): void
-    {/*
-        $subject = $this->model->find($id);
-        if (!$subject) {
+    {
+        $class = $this->model->find($id);
+        if (!$class) {
             // Handle invalid ID gracefully
-            $_SESSION['warning_message'] = "A tantárgy a megadott azonosítóval: $id nem található.";
-            $this->redirect('/subjects');
+            $_SESSION['warning_message'] = "Az osztály a megadott azonosítóval: $id nem található.";
+            $this->redirect('/classes');
         }
-        $this->render('subjects/edit', ['subject' => $subject]);
-        */
+        $this->render('classes/edit', ['class' => $class]);
     }
 
     public function save(array $data): void
     {
-        /*
-        if (empty($data['name'])) {
-            $_SESSION['warning_message'] = "A tantárgy neve kötelező mező.";
-            $this->redirect('/subjects/create'); // Redirect if input is invalid
+        
+        if (empty($data['code'])) {
+            $_SESSION['warning_message'] = "Az osztály neve kötelező mező.";
+            $this->redirect('/classes/create'); // Redirect if input is invalid
         }
         // Use the existing model instance
-        $this->model->name = $data['name'];
+        $this->model->code = $data['code'];
         $this->model->create();
-        $this->redirect('/subjects');
-        */
+        $this->redirect('/classes');
+        
     }
 
     public function update(int $id, array $data): void
     {
-        /*
-        $subject = $this->model->find($id);
-        if (!$subject || empty($data['name'])) {
+        $class = $this->model->find($id);
+        if (!$class || empty($data['code'])) {
             // Handle invalid ID or data
-            $this->redirect('/subjects');
+            $this->redirect('/classes');
         }
-        $subject->name = $data['name'];
-        $subject->update();
-        $this->redirect('/subjects');
-        */
+        $class->code = $data['code'];
+        $class->update();
+        $this->redirect('/classes');
     }
 
     function show(int $id): void
     {
-        /*
-        $subject = $this->model->find($id);
-        if (!$subject) {
-            $_SESSION['warning_message'] = "A tantárgy a megadott azonosítóval: $id nem található.";
-            $this->redirect('/subjects'); // Handle invalid ID
+        $class = $this->model->find($id);
+        if (!$class) {
+            $_SESSION['warning_message'] = "Az osztály a megadott azonosítóval: $id nem található.";
+            $this->redirect('/classes'); // Handle invalid ID
         }
-        $this->render('subjects/show', ['subject' => $subject]);
-        */
+        $this->render('classes/show', ['class' => $class]);
     }
 
     function delete(int $id): void
     {
-        /*
-        $subject = $this->model->find($id);
-        if ($subject) {
-            $result = $subject->delete();
+        $class = $this->model->find($id);
+        if ($class) {
+            $result = $class->delete();
             if ($result) {
                 $_SESSION['success_message'] = 'Sikeresen törölve';
             }
         }
 
-        $this->redirect('/subjects'); // Redirect regardless of success
-        */
+        $this->redirect('/classes'); // Redirect regardless of success
     }
 }
 ?>

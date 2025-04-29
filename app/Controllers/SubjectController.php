@@ -34,7 +34,7 @@ class SubjectController extends Controller {
     }
 
     public function save(array $data): void
-    {/*
+    {
         if (empty($data['name'])) {
             $_SESSION['warning_message'] = "A tantárgy neve kötelező mező.";
             $this->redirect('/subjects/create'); // Redirect if input is invalid
@@ -43,12 +43,10 @@ class SubjectController extends Controller {
         $this->model->name = $data['name'];
         $this->model->create();
         $this->redirect('/subjects');
-        */
     }
 
     public function update(int $id, array $data): void
     {
-        /*
         $subject = $this->model->find($id);
         if (!$subject || empty($data['name'])) {
             // Handle invalid ID or data
@@ -57,24 +55,20 @@ class SubjectController extends Controller {
         $subject->name = $data['name'];
         $subject->update();
         $this->redirect('/subjects');
-        */
     }
 
     function show(int $id): void
     {
-        /*
         $subject = $this->model->find($id);
         if (!$subject) {
             $_SESSION['warning_message'] = "A tantárgy a megadott azonosítóval: $id nem található.";
             $this->redirect('/subjects'); // Handle invalid ID
         }
         $this->render('subjects/show', ['subject' => $subject]);
-        */
     }
 
     function delete(int $id): void
     {
-        /*
         $subject = $this->model->find($id);
         if ($subject) {
             $result = $subject->delete();
@@ -84,7 +78,6 @@ class SubjectController extends Controller {
         }
 
         $this->redirect('/subjects'); // Redirect regardless of success
-        */
     }
 
 }
