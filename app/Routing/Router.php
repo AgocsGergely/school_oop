@@ -41,9 +41,9 @@ class Router {
         $data = $this->filterPostData($_POST);
         $id = $data['id'] ?? null;
 
-        switch ($requestUri){
+        switch ($requestUri) {
             case '/subjects':
-                if(!empty($data)){
+                if(!empty($data)) {
                     $subjectController = new SubjectController();
                     $subjectController->save($data);
                 }
@@ -51,9 +51,24 @@ class Router {
             case '/subjects/create':
                 $subjectController = new SubjectController();
                 $subjectController->create();
+                break;
             case '/subjects/edit':
                 $subjectController = new SubjectController();
                 $subjectController->edit($id);
+                break;
+            case '/classes':
+                if(!empty($data)) {
+                    $classController = new ClassController();
+                    $classController->save($data);
+                }
+                break;
+            case '/classes/create':
+                $classController = new ClassController();
+                $classController->create();
+                break;
+            case '/classes/edit':
+                $classController = new ClassController();
+                $classController->edit($id);
                 break;
             default:
             $this->notFound();
@@ -62,31 +77,40 @@ class Router {
     
     private function handlePatchRequests($requestUri){
         $data = $this->filterPostData($_POST);
-
-        switch ($requestUri) {
-            case 'subjects':
+        switch($requestUri) {
+            case '/subjects':
                 $id = $data['id'] ?? null;
                 $subjectController = new SubjectController();
                 $subjectController->update($id, $data);
                 break;
+            case '/classes':
+                $id = $data['id'] ?? null;
+                $classController = new ClassController();
+                $classController->update($id, $data);
+                break;
             default:
-            $this->notFound();
+                $this->notFound();
         }
     }
     private function handleDeleteRequests($requestUri){
         $data = $this->filterPostData($_POST);
 
-        switch($requestUri){
+        switch($requestUri) {
             case '/subjects':
                 $subjectController = new SubjectController();
                 $subjectController->delete((int) $data['id']);
                 break;
+            case '/classes':
+                $classController = new ClassController();
+                $classController->delete((int) $data['id']);
+                break;
             default:
-            $this->notFound();
+                $this->notFound();
         }
     }
     private function methodNotAllowed(){
-        
+        header ($_SERVER['SERVER_PROTOCOL'] . ' 405 Method Not Allowed');
+        Display::message("405 Method Not Allowed");
     }
     private function filterPostData(array $data): array
     {

@@ -44,7 +44,7 @@ abstract class Model implements ModelInterface
         $directions = $orderBy['direction'] ?? [];
 
         foreach ($fields as $index => $field){
-            $direction = $directins[$index] ?? 'ASC';
+            $direction = $directions[$index] ?? 'ASC';
             $orderByClauses[] = "$field $direction";
         }
 

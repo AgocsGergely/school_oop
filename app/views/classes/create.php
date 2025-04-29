@@ -1,10 +1,11 @@
 <?php
 
 echo <<<HTML
-        <form method='post' action='/subjects'>
+        <form method='post' action='/classes'>
             <fieldset>
-                <label for="name">Tantárgy</label>
-                <input type="text" name="name" id="name">
+                <label for="name">Osztály</label>
+                <input type="text" name="code" id="code">
+                <input type="text" name="year" id="year">
                 <hr>
                 <button type="submit" name="btn-save">
                      <i class="fa fa-save"></i>

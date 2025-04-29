@@ -71,6 +71,7 @@ class SubjectController extends Controller {
     {
         $subject = $this->model->find($id);
         if ($subject) {
+            assert($subject instanceof Subject);
             $result = $subject->delete();
             if ($result) {
                 $_SESSION['success_message'] = 'Sikeresen törölve';

@@ -252,3 +252,43 @@ Stack trace:
 [09-Apr-2025 15:43:01 Europe/Berlin] PHP Warning:  Attempt to read property "id" on null in C:\xampp\htdocs\school_oop_alap\app\views\subjects\edit.php on line 6
 [09-Apr-2025 15:43:01 Europe/Berlin] PHP Warning:  Attempt to read property "name" on null in C:\xampp\htdocs\school_oop_alap\app\views\subjects\edit.php on line 9
 [29-Apr-2025 23:36:02 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.subjects' doesn't exist in engine
+[30-Apr-2025 00:00:25 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.subjects' doesn't exist in engine
+[30-Apr-2025 00:00:27 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.subjects' doesn't exist in engine
+[30-Apr-2025 00:00:28 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.classes' doesn't exist in engine
+[30-Apr-2025 00:00:30 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.subjects' doesn't exist in engine
+[30-Apr-2025 00:00:32 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.classes' doesn't exist in engine
+[30-Apr-2025 00:00:33 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.subjects' doesn't exist in engine
+[30-Apr-2025 00:02:06 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: App\Controllers\SubjectController::edit(): Argument #1 ($id) must be of type int, null given, called in C:\xampp\htdocs\Schoolbooks\school_oop\app\Routing\Router.php on line 56 and defined in C:\xampp\htdocs\Schoolbooks\school_oop\app\Controllers\SubjectController.php:25
+Stack trace:
+#0 C:\xampp\htdocs\Schoolbooks\school_oop\app\Routing\Router.php(56): App\Controllers\SubjectController->edit(NULL)
+#1 C:\xampp\htdocs\Schoolbooks\school_oop\app\Routing\Router.php(27): App\Routing\Router->handlePostRequests('/subjects/creat...')
+#2 C:\xampp\htdocs\Schoolbooks\school_oop\app\Routing\Router.php(18): App\Routing\Router->dispatch('POST', '/subjects/creat...')
+#3 C:\xampp\htdocs\Schoolbooks\school_oop\public\index.php(11): App\Routing\Router->handle()
+#4 {main}
+  thrown in C:\xampp\htdocs\Schoolbooks\school_oop\app\Controllers\SubjectController.php on line 25
+[30-Apr-2025 00:04:27 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.subjects' doesn't exist in engine
+[30-Apr-2025 00:04:29 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.classes' doesn't exist in engine
+[30-Apr-2025 00:04:30 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.subjects' doesn't exist in engine
+[30-Apr-2025 00:04:31 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1932 Table 'schoolbook.classes' doesn't exist in engine
+[30-Apr-2025 00:11:08 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:11:10 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:20:59 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:21:03 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:21:04 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:22:46 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:22:47 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:25:11 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:25:12 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:25:13 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:26:30 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:34:58 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:37:23 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'schoolbook.subjects' doesn't exist
+[30-Apr-2025 00:37:38 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'schoolbook.subjects' doesn't exist
+[30-Apr-2025 00:37:38 Europe/Berlin] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'schoolbook.subjects' doesn't exist
+[30-Apr-2025 00:46:42 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:46:45 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:46:45 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:47:19 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:47:20 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:49:33 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[30-Apr-2025 00:49:43 Europe/Berlin] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1

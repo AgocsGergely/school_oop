@@ -6,12 +6,13 @@ foreach ($classes as $class) {
             <tr>
                 <td>{$class->id}</td>
                 <td>{$class->code}</td>
+                <td>{$class->year}</td>
                 <td class='flex float-right'>
-                    <form method='post' action='/subjects/edit'>
+                    <form method='post' action='/classes/edit'>
                         <input type='hidden' name='id' value='{$class->id}'>
                         <button type='submit' name='btn-edit' title='Módosít'><i class='fa fa-edit'></i></button>
                     </form>
-                    <form method='post' action='/subjects'>
+                    <form method='post' action='/classes'>
                         <input type='hidden' name='id' value='{$class->id}'>    
                         <input type='hidden' name='_method' value='DELETE'>
                         <button type='submit' name='btn-del' title='Töröl'><i class='fa fa-trash trash'></i></button>
@@ -26,7 +27,8 @@ $html = <<<HTML
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Tantárgy</th>
+                    <th>Osztály</th>
+                    <th>Év</th>
                     <th>
                         <form method='post' action='/classes/create'>
                             <button type="submit" name='btn-plus' title='Új'>
