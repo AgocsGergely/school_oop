@@ -83,9 +83,9 @@ abstract class Model implements ModelInterface
     }
     function delete(){
         
-        $sql = "DELETE FROM ".self::$table."WHERE id = :id";
-
-        return $this->db->execSql($sql,['id' => $this->id]);
+        $sql = "DELETE FROM `" . static::$table . "` WHERE id = :id";
+        $queryResult = $this->db->execSql($sql, ['id' => $this->id]);
+        return $queryResult;
         
     }
     public function create()
