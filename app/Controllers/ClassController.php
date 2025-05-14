@@ -41,6 +41,7 @@ class ClassController extends Controller{
         }
         // Use the existing model instance
         $this->model->code = $data['code'];
+        $this->model->year = $data['year'];
         $this->model->create();
         $this->redirect('/classes');
         
@@ -54,6 +55,7 @@ class ClassController extends Controller{
             $this->redirect('/classes');
         }
         $class->code = $data['code'];
+        $class->year = $data['year'];
         $class->update();
         $this->redirect('/classes');
     }

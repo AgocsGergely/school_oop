@@ -4,7 +4,7 @@ echo <<<HTML
         <form method='post' action='/subjects'>
             <fieldset>
                 <label for="name">Tantárgy</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" placeholder="Tantárgy">
                 <hr>
                 <button type="submit" name="btn-save">
                      <i class="fa fa-save"></i>

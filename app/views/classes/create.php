@@ -4,8 +4,8 @@ echo <<<HTML
         <form method='post' action='/classes'>
             <fieldset>
                 <label for="name">Osztály</label>
-                <input type="text" name="code" id="code">
-                <input type="text" name="year" id="year">
+                <input type="text" name="code" id="code" placeholder="Osztály">
+                <input type="text" name="year" id="year" placeholder="Év">
                 <hr>
                 <button type="submit" name="btn-save">
                      <i class="fa fa-save"></i>
